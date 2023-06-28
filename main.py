@@ -57,3 +57,18 @@ while running:
                 arquivo.close()
             except:
                 print('Erro ao Carregar os Arquivos!')
+
+
+        if keys[pygame.K_F12]:
+            try:
+                arquivo = open('bd.atitus', 'w')
+                arquivo.close()
+            except:
+                print('Erro ao Carregar os Arquivos!')
+
+
+        if keys[pygame.K_ESCAPE]:
+            running = False
+
+
+    tela.blit(fundo, (0, 0))
