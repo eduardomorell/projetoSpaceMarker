@@ -88,3 +88,15 @@ while running:
         pygame.draw.circle(tela, (255, 255, 255), pos, 2)
         text_surface = fonte.render(name, True, (255, 255, 255))
         tela.blit(text_surface, (pos[0] + 10, pos[1] - 10))
+
+    # Desenhar linhas entre os pontos
+    if len(estrelas) > 1:
+        for i in range(1, len(estrelas)):
+            pos_atual = estrelas[i][1]
+            pos_anterior = estrelas[i - 1][1]
+            pygame.draw.line(tela, (255, 255, 255), pos_anterior, pos_atual, 2)
+
+    pygame.display.update()
+    clock.tick(60)
+
+pygame.quit()
