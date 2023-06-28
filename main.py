@@ -36,3 +36,24 @@ while running:
                 item = 'Estrela Desconhecida ' + str(pos)
             estrelas.append((item, pos))
             print(estrelas)
+
+
+        if keys[pygame.K_F10]:
+            try:
+                arquivo = open('bd.atitus', 'w')
+                for estrela in estrelas:
+                    arquivo.write("{0}\n".format(estrela))
+                arquivo.close()
+            except:
+                print('Erro ao Carregar os Arquivos!')
+
+
+        if keys[pygame.K_F11]:
+            try:
+                arquivo = open('bd.atitus', 'r')
+                for estrela in arquivo.readlines():
+                    tupla = eval(estrela)
+                    estrelas.append((tupla))
+                arquivo.close()
+            except:
+                print('Erro ao Carregar os Arquivos!')
