@@ -72,3 +72,19 @@ while running:
 
 
     tela.blit(fundo, (0, 0))
+
+    # Escrever (F10, F11, F12)
+    f10 = fonte.render('F10 para salvar os Arquivos', True, branco) 
+    f11 = fonte.render('F11 para carregar os Arquivos', True, branco)
+    f12 = fonte.render('F12 para deletar os Arquivos', True, branco)
+
+    tela.blit(f10, (10, 10))
+    tela.blit(f11, (10, 30))
+    tela.blit(f12, (10, 50))
+
+
+    # Desenhar todos os pontos das estrelas e seus nomes
+    for name, pos in estrelas:
+        pygame.draw.circle(tela, (255, 255, 255), pos, 2)
+        text_surface = fonte.render(name, True, (255, 255, 255))
+        tela.blit(text_surface, (pos[0] + 10, pos[1] - 10))
